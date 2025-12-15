@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Used Car Price Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f2f2f2;
+        }
+        h2 {
+            color: #333;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            width: 400px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h2>Used Car Price Prediction</h2>
+    <form action="/predict" method="post">
+        <label>Year:</label>
+        <input type="number" name="year" required>
+
+        <label>Present Price (in lakhs):</label>
+        <input type="number" step="0.01" name="present_price" required>
+
+        <label>Driven Kms:</label>
+        <input type="number" name="driven_kms" required>
+
+        <label>Owner:</label>
+        <input type="number" name="owner" required>
+
+        <label>Fuel Type:</label>
+        <select name="fuel_type">
+            <option value="Petrol">Petrol</option>
+            <option value="Diesel">Diesel</option>
+        </select>
+
+        <label>Selling Type:</label>
+        <select name="selling_type">
+            <option value="Dealer">Dealer</option>
+            <option value="Individual">Individual</option>
+        </select>
+
+        <label>Transmission:</label>
+        <select name="transmission">
+            <option value="Manual">Manual</option>
+            <option value="Automatic">Automatic</option>
+        </select>
+
+        <input type="submit" value="Predict Price">
+    </form>
+</body>
+</html>
